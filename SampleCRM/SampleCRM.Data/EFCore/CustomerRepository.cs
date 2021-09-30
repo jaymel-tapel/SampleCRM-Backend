@@ -56,7 +56,7 @@ namespace SampleCRM.Data.EFCore
             {
                 var sqlSb = new StringBuilder("SELECT * from [dbo].[Customers] ");
 
-                if (filterKeyword != null)
+                if (!String.IsNullOrEmpty(filterKeyword))
                 {
                     sqlSb.Append($"Where Id='{filterKeyword}' OR " +
                         $"Where LastName LIKE '%{filterKeyword}%' OR " +
@@ -65,9 +65,9 @@ namespace SampleCRM.Data.EFCore
                         $"Where CustCode  LIKE '%{filterKeyword}%' ");
                 }
 
-                if (sortOrder != null && sortColumn != null)
+                if (!String.IsNullOrEmpty(sortOrder) && !String.IsNullOrEmpty(sortColumn))
                 {
-                    sqlSb.Append($"ORDER BY {sortColumn} ORDER {sortOrder}");
+                    sqlSb.Append($"ORDER BY {sortColumn} {sortOrder}");
                     ;
                 }
                 else
