@@ -58,8 +58,8 @@ namespace SampleCRM.Data.EFCore
 
                 if (filterKeyword != null)
                 {
-                    sqlSb.Append($"Where Id='{filterKeyword}' OR" +
-                        $"Where LastName LIKE '%{filterKeyword}%' OR" +
+                    sqlSb.Append($"Where Id='{filterKeyword}' OR " +
+                        $"Where LastName LIKE '%{filterKeyword}%' OR " +
                         $"Where FirstName LIKE '%{filterKeyword}%' OR " +
                         $"Where Email LIKE '%{filterKeyword}%' OR " +
                         $"Where CustCode  LIKE '%{filterKeyword}%' ");
