@@ -121,6 +121,7 @@ namespace SampleCRM.Data.EFCore
                 entity.Phone = customer.Phone;
                 entity.Email = customer.Email;
                 entity.Address = customer.Address;
+                entity.CustCode = customer.CustCode;
                 await _db.SaveChangesAsync();
                 return true;
             }
