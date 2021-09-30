@@ -18,7 +18,7 @@ namespace SampleCRM.Data.EFCore
 
         public CustomerRepository(CrmDbContext crmDbContext)
         {
-            _db = crmDbContext; 
+            _db = crmDbContext;
         }
 
         public async Task<Customer> Add(Customer customer)
@@ -29,7 +29,7 @@ namespace SampleCRM.Data.EFCore
                 await this._db.SaveChangesAsync();
                 return customer;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new DatabaseAccessException("Error adding customer", e);
             }
@@ -49,12 +49,12 @@ namespace SampleCRM.Data.EFCore
             }
         }
 
-
+        // NEEDS TO BE REFACTOR FOR QUERY OPTIMIZATION, OMIT BIRTHDAY, ADDRESS AND PHONE FIELDS IN THE QUERY
         public async Task<IEnumerable<CustomerBasicInfo>> GetAll(string filterKeyword = null, string sortOrder = null, string sortColumn = null)
         {
             try
             {
-                var sqlSb = new StringBuilder("SELECT Id, LastName, FirstName, Email, CustCode From [dbo].[Customers] ");
+                var sqlSb = new StringBuilder("SELECT * from [dbo].[Customers] ");
 
                 if (filterKeyword != null)
                 {
@@ -68,14 +68,15 @@ namespace SampleCRM.Data.EFCore
                 if (sortOrder != null && sortColumn != null)
                 {
                     sqlSb.Append($"ORDER BY {sortColumn} ORDER {sortOrder}");
-;                } else
+                    ;
+                }
+                else
                 {
-                    sqlSb.Append($"ORDER BY Id ORDER ASC");
+                    sqlSb.Append($"ORDER BY Id ASC");
                 }
 
                 var data = await _db.Customers.FromSqlRaw(sqlSb.ToString()).ToListAsync();
                 return data;
-
             }
             catch (Exception e)
             {
