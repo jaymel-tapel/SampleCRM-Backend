@@ -58,17 +58,22 @@ namespace SampleCRM.Data.EFCore
 
                 if (!String.IsNullOrEmpty(filterKeyword))
                 {
-                    sqlSb.Append($"Where Id='{filterKeyword}' OR " +
-                        $"Where LastName LIKE '%{filterKeyword}%' OR " +
-                        $"Where FirstName LIKE '%{filterKeyword}%' OR " +
-                        $"Where Email LIKE '%{filterKeyword}%' OR " +
-                        $"Where CustCode  LIKE '%{filterKeyword}%' ");
+                    if (int.TryParse(filterKeyword, out int id))
+                    {
+                        sqlSb.Append($"Where Id='{id}' ");
+                    }
+                    else
+                    {
+                        sqlSb.Append($"Where LastName LIKE '%{filterKeyword}%' OR " +
+                            $" FirstName LIKE '%{filterKeyword}%' OR " +
+                            $" Email LIKE '%{filterKeyword}%' OR " +
+                            $" CustCode  LIKE '%{filterKeyword}%' ");
+                    }
                 }
 
                 if (!String.IsNullOrEmpty(sortOrder) && !String.IsNullOrEmpty(sortColumn))
                 {
                     sqlSb.Append($"ORDER BY {sortColumn} {sortOrder}");
-                    ;
                 }
                 else
                 {
