@@ -39,7 +39,7 @@ namespace SampleCRM.API.Controllers
                 ModelState.AddModelError("Email", "Email already existing.");
             }
 
-            Customer newCustomer = new ()
+            Customer newCustomer = new()
             {
                 Email = customerAdd.Email,
                 FirstName = customerAdd.FirstName,
@@ -49,7 +49,7 @@ namespace SampleCRM.API.Controllers
             };
 
             // parse submitted date string into DateTime object
-            if(DateTime.TryParse(customerAdd.Birthday, out DateTime birthday))
+            if (DateTime.TryParse(customerAdd.Birthday, out DateTime birthday))
             {
                 newCustomer.Birthday = birthday;
             }
@@ -58,7 +58,7 @@ namespace SampleCRM.API.Controllers
                 ModelState.AddModelError("Birthday", "Invalid Birthday Date Format.");
             }
 
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 // Generate customer code
                 var custCodeSb = new StringBuilder();
@@ -85,7 +85,7 @@ namespace SampleCRM.API.Controllers
                 ModelState.AddModelError("Id", "User not found!");
             }
 
-            Customer updatedCustomer = new ()
+            Customer updatedCustomer = new()
             {
                 Id = customerUpdate.Id,
                 Email = customerUpdate.Email,
@@ -123,7 +123,7 @@ namespace SampleCRM.API.Controllers
         }
 
         // Get Details Customer
-        [HttpPost("api/customer/delete/{id}")]
+        [HttpPost("api/customer/get/{id}")]
         public async Task<IActionResult> GetCustomer(string customerId)
         {
             if (String.IsNullOrEmpty(customerId))
