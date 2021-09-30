@@ -124,14 +124,9 @@ namespace SampleCRM.API.Controllers
 
         // Get Details Customer
         [HttpPost("api/customer/get/{id}")]
-        public async Task<IActionResult> GetCustomer(string customerId)
+        public async Task<IActionResult> GetCustomer([FromRoute] int id)
         {
-            if (String.IsNullOrEmpty(customerId))
-            {
-                ModelState.AddModelError("Id", "Id is required.");
-            }
-
-            Customer customer = await _customerService.GetById(int.Parse(customerId));
+            Customer customer = await _customerService.GetById(id);
             if (customer == null)
             {
                 return NotFound("Customer not found!");
@@ -148,12 +143,12 @@ namespace SampleCRM.API.Controllers
         }
 
         // Delete Customer
-        [HttpPost("api/customer/delete")]
-        public async Task<IActionResult> DeleteCustomer([FromBody] CustomerDeleteViewModel customerDelete)
+        [HttpPost("api/customer/delete/{id}")]
+        public async Task<IActionResult> DeleteCustomer([FromRoute] int id)
         {
             if (ModelState.IsValid)
             {
-                return Ok(await _customerService.Delete(customerDelete.Id));
+                return Ok(await _customerService.Delete(id));
             }
             else
             {
