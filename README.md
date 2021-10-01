@@ -1,4 +1,5 @@
 # SampleCRM-Backend
+This project is built with .NET Core 5
 
 ## Projects/Layers
 
@@ -13,7 +14,7 @@
 ### Data
 - ICustomerReposity
 - IUserRepository
-- EFCore Repository Implementations
+- EntityFramework Core Repository Implementations
 
 ### Models
 - Application User Model
