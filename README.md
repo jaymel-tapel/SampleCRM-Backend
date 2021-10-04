@@ -1,7 +1,7 @@
 # SampleCRM-Backend
 This project is built with .NET Core 5
 
-### SampleCRM.API contains:
+**SampleCRM.API contains:**\
 - Customer Contoller
 - User Controller
 - ErrorHandling Middleware
@@ -10,16 +10,16 @@ This project is built with .NET Core 5
 - ViewModels
 - App Settings Files
 
-### SampleCRM.Data contains:
+**SampleCRM.Data contains:**\
 - ICustomerReposity
 - IUserRepository
 - EntityFramework Core Repository Implementations
 
-### SampleCRM.Models contains:
+**SampleCRM.Models contains:**\
 - Application User Model
 - Customer/CustomerBasicInfo Model
 
-### SampleCRM.Helpers contains:
+**SampleCRM.Helpers contains:**\
 - AuthSettings Configuration Model
 - Token Model
 
