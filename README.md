@@ -32,7 +32,7 @@ Response
     "lastName":"Doe",
     "firstName":"John",
     "custCode":"johndoe20210923",
-    "email":"email@gmail.com",
+    "email":"johndoe@gmail.com",
     "birthday":"2021-09-23T08:00:00",
     "phone":"09218945276",
     "address":"83 Sample street, Manila",
