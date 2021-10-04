@@ -8,7 +8,7 @@ This project is built with .NET Core 5
 - Customer Service 
 - User Service 
 - ViewModels
-- App Settings Json
+- App Settings Files
 
 ### SampleCRM.Data contains:
 - ICustomerReposity
