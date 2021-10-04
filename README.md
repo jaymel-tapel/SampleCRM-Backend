@@ -75,7 +75,8 @@ Response body:
 ```
 
 
-**Endpoint: /api/customers/getall** - requires JWT Bearer Token\
+**Endpoint: /api/customers/getall**\
+requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -100,7 +101,8 @@ Response body:
 ]
 ```
 
-**Endpoint: /api/customer/add** - requires JWT Bearer Token\
+**Endpoint: /api/customer/add**\
+requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -127,7 +129,8 @@ Response body:
   }
 ```
 
-**Endpoint: /api/customer/update** - requires JWT Bearer Token\
+**Endpoint: /api/customer/update**\
+requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -147,7 +150,8 @@ Response body:
 }
 ```
 
-**Endpoint: /api/customer/get/7** - requires JWT Bearer Token\
+**Endpoint: /api/customer/get/7**\
+requires JWT Bearer Token\
 Response body:
 ```
 {
@@ -162,7 +166,8 @@ Response body:
   }
 ```
 
-**Endpoint: /api/customer/delete/7** - requires JWT Bearer Token\
+**Endpoint: /api/customer/delete/7**\
+requires JWT Bearer Token\
 Response body:
 ```
 {
