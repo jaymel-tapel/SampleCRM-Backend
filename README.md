@@ -24,7 +24,7 @@ This project is built with .NET Core 5
 - Token Model
 
 ### Endpoints
-**/api/customers/getall**\
+**/api/customers/getall** - requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -50,7 +50,7 @@ Response
 ]
 ```
 
-**/api/customer/add**\
+**/api/customer/add** - requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -77,7 +77,7 @@ Response
   }
 ```
 
-**/api/customer/update**\
+**/api/customer/update** - requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -97,7 +97,7 @@ Response
 }
 ```
 
-**/api/customer/get/7**\
+**/api/customer/get/7** - requires JWT Bearer Token\
 Response
 ```
 {
@@ -110,6 +110,14 @@ Response
   "phone":"09218945276",
   "address":"83 Sample street, Manila",
   }
+```
+
+**/api/customer/delete/7** - requires JWT Bearer Token\
+Response
+```
+{
+  true // if successful
+}
 ```
 
 
