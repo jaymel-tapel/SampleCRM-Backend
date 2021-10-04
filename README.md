@@ -60,7 +60,7 @@ Response body:
 }
 ```
 
-**Endpoint: /api/update-profile**
+**Endpoint: /api/update-profile**\
 requires JWT Bearer Token\
 Request body:
 ```
@@ -78,7 +78,7 @@ Response body:
 }
 ```
 
-**Endpoint: /api/change-password**
+**Endpoint: /api/change-password**\
 requires JWT Bearer Token\
 Request body:
 ```
