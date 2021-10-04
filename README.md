@@ -199,14 +199,14 @@ Response body:
 
 ## How to use
 
-- Visual Studio
+### Visual Studio
 1. Packages should be automatically installed/resolved.
 2. Edit **Sample appsettings.json** and provide your own AppSecret and SQLServerConnection string. Remove **Sample ** from file name.
 3. Edit **Sample appsettings.development.json** and provide your own AppSecret and DEVELOPMENT SQLServerConnection string. Remove **Sample ** from file name. 
 4. Enter **Update-Database** for Nuget Package Manager while the SampleCRM.Data is selected.  
 5. Click Run (IIS Express)
 
-- Visual studio Code (or any code editor) with .Net 5 SDK 
+### Visual studio Code (or any code editor) with .Net 5 SDK 
 1. Open command line, use **dotnet restore** while in a project folder or by using **--project** flag to install dependencies.
 2. Edit **Sample appsettings.json** and provide your own AppSecret and SQLServerConnection string. Remove **Sample ** from file name.
 3. Edit **Sample appsettings.development.json** and provide your own AppSecret and DEVELOPMENT SQLServerConnection string. Remove **Sample ** from file name.
