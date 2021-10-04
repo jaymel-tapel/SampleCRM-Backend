@@ -20,8 +20,9 @@ req:
   "sortOrder": "string", // ASC or DESC
   "sortColumn": "string" // Id, LastName, FirstName, Email or CustCode
 }
-res
+
 ```
+**Response**
 [
   {
     "id":7,     
