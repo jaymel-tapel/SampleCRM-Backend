@@ -60,6 +60,41 @@ Response body:
 }
 ```
 
+**Endpoint: /api/update-profile**
+requires JWT Bearer Token\
+Request body:
+```
+{
+  "id": "15328f47-893e-47a1-ad68-453f4a766786"
+  "email":"jaymel.tapel@gmail.com,
+  "firstName":"Jaymel",
+  "lastName":"Tapel"
+}
+```
+Response body:
+```
+{
+  true // if successful
+}
+```
+
+**Endpoint: /api/change-password**
+requires JWT Bearer Token\
+Request body:
+```
+{
+  "id": "15328f47-893e-47a1-ad68-453f4a766786"
+  "password: "test123"
+}
+```
+Response body:
+```
+{
+  true // if successful
+}
+```
+
+
 
 **Endpoint: /api/customers/getall**\
 requires JWT Bearer Token\
