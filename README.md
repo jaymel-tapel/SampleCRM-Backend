@@ -25,7 +25,7 @@ This project is built with .NET Core 5
 
 ### Endpoints
 
-**/api/login**\
+**Endpoint: /api/login**\
 Request body:
 ```
 {
@@ -52,7 +52,7 @@ Response body:
 ```
 
 
-**/api/register**
+**Endpoint: /api/register**
 Request body:
 ```
 {
@@ -75,7 +75,7 @@ Response body:
 ```
 
 
-**/api/customers/getall** - requires JWT Bearer Token\
+**Endpoint: /api/customers/getall** - requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -100,7 +100,7 @@ Response body:
 ]
 ```
 
-**/api/customer/add** - requires JWT Bearer Token\
+**Endpoint: /api/customer/add** - requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -127,7 +127,7 @@ Response body:
   }
 ```
 
-**/api/customer/update** - requires JWT Bearer Token\
+**Endpoint: /api/customer/update** - requires JWT Bearer Token\
 Request body:
 ```
 {
@@ -147,7 +147,7 @@ Response body:
 }
 ```
 
-**/api/customer/get/7** - requires JWT Bearer Token\
+**Endpoint: /api/customer/get/7** - requires JWT Bearer Token\
 Response body:
 ```
 {
@@ -162,7 +162,7 @@ Response body:
   }
 ```
 
-**/api/customer/delete/7** - requires JWT Bearer Token\
+**Endpoint: /api/customer/delete/7** - requires JWT Bearer Token\
 Response body:
 ```
 {
