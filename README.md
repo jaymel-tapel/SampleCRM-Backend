@@ -21,6 +21,7 @@ req:
   "sortColumn": "string" // Id, LastName, FirstName, Email or CustCode
 }
 res
+```
 [
   {
     "id":7,     
@@ -33,6 +34,7 @@ res
     "address":"test",
     }
 ]
+```
 
 
 
