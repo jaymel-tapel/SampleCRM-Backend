@@ -24,17 +24,67 @@ This project is built with .NET Core 5
 - Token Model
 
 ### Endpoints
+
+**/api/login**\
+Request body:
+```
+{
+  "email": "string",
+  "password": "string"
+}
+```
+Response body:
+```
+{"user":
+  {
+    "email":"jaymel.tapel@gmail.com",
+    "lastName":"Tapel",
+    "firstName": "Jaymel",
+    "id":"15328f47-893e-47a1-ad68-453f4a766786",
+    ...
+  },
+  "token":
+  {
+    "value":"eyJhbGciOiJIUzI1NiI...",
+    "expires":"11/3/2021 5:12:53 AM"
+  }
+}
+```
+
+
+**/api/register**
+Request body:
+```
+{
+  "email":"jaymel.tapel@gmail.com,
+  "password":"1234",
+  "firstName":"Jaymel",
+  "lastName":"Tapel"
+}
+```
+
+Response body:
+```
+{
+  "email":"jaymel.tapel@gmail.com",
+  "lastName":"Tapel",
+  "firstName": "Jaymel",
+  "id":"15328f47-893e-47a1-ad68-453f4a766786",
+  ...
+}
+```
+
+
 **/api/customers/getall** - requires JWT Bearer Token\
 Request body:
 ```
 {
-  "filterKeyword": "string", // Any string or keyword
-  "sortOrder": "string", // ASC or DESC
-  "sortColumn": "string" // Id, LastName, FirstName, Email or CustCode
+  "filterKeyword": "<Any string or keyword>",
+  "sortOrder": "<ASC or DESC>",
+  "sortColumn": "<Id, LastName, FirstName, Email or CustCode>"
 }
 ```
-
-Response
+Response body:
 ```
 [
   {
@@ -63,7 +113,7 @@ Request body:
 }
 ```
 
-Response
+Response body:
 ```
 {
   "id":7,
@@ -90,7 +140,7 @@ Request body:
   "address": "string"
 }
 ```
-Response
+Response body:
 ```
 {
   true // if successful
@@ -98,7 +148,7 @@ Response
 ```
 
 **/api/customer/get/7** - requires JWT Bearer Token\
-Response
+Response body:
 ```
 {
   "id":7,
@@ -113,7 +163,7 @@ Response
 ```
 
 **/api/customer/delete/7** - requires JWT Bearer Token\
-Response
+Response body:
 ```
 {
   true // if successful
