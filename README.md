@@ -1,11 +1,11 @@
 # SampleCRM-Backend
 This project is built with .NET Core 5
 
-**SampleCRM.API** - WebAPI Project that Controllers, Services, DTOs and default required files such as Program.cs, Startup.cs, appsettings.json/appsettings.development.json
+**SampleCRM.API** - WebAPI Project contains Controllers, Services, DTOs and default required files such as Program.cs, Startup.cs, appsettings.json/appsettings.development.json
 
 **SampleCRM.Data** - Data Access layer of CRM, contains Repository interfaces and Entity Framework Core Implementations.
 
-**SampleCRM.Models** - Class library for entities/models, contains User and Customer/CustomerBasicInfo classes.
+**SampleCRM.Entities** - Class library for entities/models, contains User and Customer/CustomerBasicInfo classes.
 
 **SampleCRM.Helpers** - Class library which contains the token model and AuthSettings configuration model used for accessing the appsettings.json
 
@@ -198,10 +198,20 @@ Response body:
 
 
 ## How to use
-1. Packages should be automatically installed/resolved. If not, use **dotnet restore** while in a project folder or by using **--project** flag;
+
+### Visual Studio
+1. Packages should be automatically installed/resolved.
+2. Edit **Sample appsettings.json** and provide your own AppSecret and SQLServerConnection string. Remove **Sample ** from file name.
+3. Edit **Sample appsettings.development.json** and provide your own AppSecret and DEVELOPMENT SQLServerConnection string. Remove **Sample ** from file name. 
+4. Enter **Update-Database** for Nuget Package Manager while the SampleCRM.Data is selected to initialize your database.  
+5. Click Run (IIS Express)
+
+### Visual studio Code (or any code editor) with .Net 5 SDK 
+1. In your preferred command line, use **dotnet restore** while in a project folder or by using **--project** flag to install dependencies.
 2. Edit **Sample appsettings.json** and provide your own AppSecret and SQLServerConnection string. Remove **Sample ** from file name.
 3. Edit **Sample appsettings.development.json** and provide your own AppSecret and DEVELOPMENT SQLServerConnection string. Remove **Sample ** from file name.
-4. Type **dotnet ef database update --project=SampleCRM.Data** if you are using powershell/git bash or enter **Update-Database** for Nuget Package Manager while the SampleCRM.Data is selected.  
+4. To initialize your database, type **dotnet ef database update** if you are in the **SampleCRM.Data folder** or type **dotnet ef database update --project=SampleCRM.Data** if you are in the solutions folder.
+5. To run your project, type **dotnet run** if you are in the **SampleCRM.API folder**  or **dotnet run --project=SampleCRM.API**  if you are in the solutions folder.
 
 
 ## To be added
