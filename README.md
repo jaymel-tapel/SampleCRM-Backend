@@ -1,9 +1,7 @@
 # SampleCRM-Backend
 This project is built with .NET Core 5
 
-## Projects/Layers
-
-### API
+### SampleCRM.API contains:
 - Customer Contoller
 - User Controller
 - ErrorHandling Middleware
@@ -11,9 +9,20 @@ This project is built with .NET Core 5
 - User Service 
 - ViewModels
 
+### SampleCRM.Data contains:
+- ICustomerReposity
+- IUserRepository
+- EntityFramework Core Repository Implementations
+
+### SampleCRM.Models contains:
+- Application User Model
+- Customer/CustomerBasicInfo Model
+
+### SampleCRM.Helpers contains:
+- AuthSettings Configuration Model
+- Token Model
+
 ### Endpoints
-
-
 **/api/customers/getall**\
 Request:
 ```
@@ -42,18 +51,7 @@ Response
 
 
 
-### Data
-- ICustomerReposity
-- IUserRepository
-- EntityFramework Core Repository Implementations
 
-### Models
-- Application User Model
-- Customer/CustomerBasicInfo Model
-
-### Helpers
-- AuthSettings Configuration Model
-- Token Model
 
 ## How to use
 1. Packages should be automatically installed/resolved. If not, use **dotnet restore** while in a project folder or by using **--project** flag;
