@@ -50,7 +50,7 @@ Response
 ]
 ```
 
-**/api/customer/add**
+**/api/customer/add**\
 Request:
 ```
 {
