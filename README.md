@@ -13,16 +13,19 @@ This project is built with .NET Core 5
 
 ### Endpoints
 
+
 /customers/getall
-req:
+Request:
+```
 {
   "filterKeyword": "string", // Any string or keyword
   "sortOrder": "string", // ASC or DESC
   "sortColumn": "string" // Id, LastName, FirstName, Email or CustCode
 }
-
 ```
-**Response**
+
+Response
+```
 [
   {
     "id":7,     
