@@ -7,7 +7,7 @@ This project is built with .NET Core 5
 
 **SampleCRM.Models** - Class library for entities/models, contains User and Customer/CustomerBasicInfo classes.
 
-**SampleCRM.Helpers contains:** - Class library which contains the token model and AuthSettings configuration model used for accessing the appsettings.json
+**SampleCRM.Helpers** - Class library which contains the token model and AuthSettings configuration model used for accessing the appsettings.json
 
 ### Endpoints
 
