@@ -23,6 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SampleCRM.Data\SampleCRM.Data.csproj" />
+    <ProjectReference Include="..\SampleCRM.DTOs\SampleCRM.DTOs.csproj" />
+    <ProjectReference Include="..\SampleCRM.Entities\SampleCRM.Entities.csproj" />
     <ProjectReference Include="..\SampleCRM.Helpers\SampleCRM.Helpers.csproj" />
   </ItemGroup>
 

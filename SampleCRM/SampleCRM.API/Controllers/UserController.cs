@@ -20,7 +20,7 @@ namespace SampleCRM.API.Controllers
 
         // Login
         [HttpPost("api/login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginViewModel userLogin)
+        public async Task<IActionResult> Login([FromBody] UserLogin userLogin)
         {
             User user = await _userService.GetByEmail(userLogin.Email);
             if (user == null)
@@ -59,7 +59,7 @@ namespace SampleCRM.API.Controllers
 
         // Register
         [HttpPost("api/register")]
-        public async Task<IActionResult> Register([FromBody] UserRegisterViewModel userRegister)
+        public async Task<IActionResult> Register([FromBody] UserRegister userRegister)
         {
             User user = await _userService.GetByEmail(userRegister.Email);
             if (user != null)
@@ -91,7 +91,7 @@ namespace SampleCRM.API.Controllers
         // Update Profile
         [Authorize]
         [HttpPost("api/update-profile")]
-        public async Task<IActionResult> UpdateProfile([FromBody] UserUpdateViewModel userUpdate)
+        public async Task<IActionResult> UpdateProfile([FromBody] UserUpdate userUpdate)
         {
             if (ModelState.IsValid)
             {
@@ -113,7 +113,7 @@ namespace SampleCRM.API.Controllers
         // Change Password
         [Authorize]
         [HttpPost("api/change-password")]
-        public async Task<IActionResult> ChangePassword([FromBody] UserChangePasswordViewModel userChangePassword)
+        public async Task<IActionResult> ChangePassword([FromBody] UserChangePassword userChangePassword)
         {
             if (ModelState.IsValid)
             {

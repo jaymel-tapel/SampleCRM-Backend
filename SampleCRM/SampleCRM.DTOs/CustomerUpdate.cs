@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.DTOs
 {
-    public class CustomerUpdateViewModel
+    public class CustomerUpdate
     {
         [Required]
         public int Id { get; set; }

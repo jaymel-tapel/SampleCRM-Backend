@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.DTOs
 {
-    public class CustomerDeleteViewModel
+    public class CustomerDelete
     {
         [Required]
         public int Id { get; set; }

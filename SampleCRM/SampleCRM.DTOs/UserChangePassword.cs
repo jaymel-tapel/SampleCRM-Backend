@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.DTOs
 {
-    public class UserChangePasswordViewModel
+    public class UserChangePassword
     {
         [Required(ErrorMessage = "Id is required.")]
         public string Id { get; set; }

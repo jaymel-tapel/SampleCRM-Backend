@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.DTOs
 {
-    public class CustomerGetAllViewModel
+    public class CustomerGetAll
     {
         public string FilterKeyword { get; set; }
         public string SortOrder { get; set; }

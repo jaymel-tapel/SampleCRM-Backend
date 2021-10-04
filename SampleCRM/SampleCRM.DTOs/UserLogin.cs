@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.DTOs
 {
-    public class UserLoginViewModel
+    public class UserLogin
     {
         [Required(ErrorMessage = "Email is required.")]
         public string Email { get; set; }

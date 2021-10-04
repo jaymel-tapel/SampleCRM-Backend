@@ -22,7 +22,7 @@ namespace SampleCRM.API.Controllers
 
         // Get All Customer
         [HttpPost("api/customer/getall")]
-        public async Task<IActionResult> GetAllCustomer([FromBody] CustomerGetAllViewModel customerGetAll)
+        public async Task<IActionResult> GetAllCustomer([FromBody] CustomerGetAll customerGetAll)
         {
             var Customers = await _customerService.GetAll(customerGetAll.FilterKeyword, customerGetAll.SortOrder, customerGetAll.SortColumn);
             return Ok(Customers);
@@ -30,7 +30,7 @@ namespace SampleCRM.API.Controllers
 
         // Add New Customer
         [HttpPost("api/customer/add")]
-        public async Task<IActionResult> AddCustomer([FromBody] CustomerAddViewModel customerAdd)
+        public async Task<IActionResult> AddCustomer([FromBody] CustomerAdd customerAdd)
         {
 
             Customer customer = await _customerService.GetByEmail(customerAdd.Email);
@@ -76,7 +76,7 @@ namespace SampleCRM.API.Controllers
 
         // Update Customer
         [HttpPost("api/customer/update")]
-        public async Task<IActionResult> UpdateCustomer([FromBody] CustomerUpdateViewModel customerUpdate)
+        public async Task<IActionResult> UpdateCustomer([FromBody] CustomerUpdate customerUpdate)
         {
 
             Customer checkCustomer = await _customerService.GetById(customerUpdate.Id);

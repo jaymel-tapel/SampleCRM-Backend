@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.DTOs
 {
-    public class UserUpdateViewModel
+    public class UserUpdate
     {
         [Required(ErrorMessage = "ID is missing.")]
         public string Id { get; set; }
