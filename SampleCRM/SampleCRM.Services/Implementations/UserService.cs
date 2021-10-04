@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.Options;
+﻿using BCrypt.Net;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SampleCRM.Data.Repository;
 using SampleCRM.Entities;
 using SampleCRM.Helpers;
+using SampleCRM.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,59 +15,7 @@ using System.Threading.Tasks;
 
 namespace SampleCRM.API.Services
 {
-    public interface IUserService
-    {
-        /// <summary>
-        /// Check user's email and password if correct
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        Task<bool> Authenticate(string email, string password);
-
-        /// <summary>
-        /// Add a user
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        Task<User> Add(User user);
-
-        /// <summary>
-        /// Get user details by ID
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        Task<User> GetById(string id);
-
-        /// <summary>
-        /// Get user details by email
-        /// </summary>
-        /// <param name="email"></param>
-        /// <returns></returns>
-        Task<User> GetByEmail(string email);
-
-        /// <summary>
-        /// Update user details
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        Task<bool> Update(User user);
-
-        /// <summary>
-        /// Update user password
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        Task<bool> UpdatePassword(string id, string password);
-
-        /// <summary>
-        /// Generate JWT Token
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        TokenWithExpireDate GenerateToken(string id);
-    }
+   
 
     public class UserService : IUserService
     {

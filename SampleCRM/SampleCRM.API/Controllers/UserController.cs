@@ -4,6 +4,7 @@ using SampleCRM.API.DTOs;
 using SampleCRM.API.Services;
 using SampleCRM.Entities;
 using SampleCRM.Helpers;
+using SampleCRM.Services.Interfaces;
 using System.Threading.Tasks;
 
 namespace SampleCRM.API.Controllers

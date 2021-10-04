@@ -26,6 +26,7 @@
     <ProjectReference Include="..\SampleCRM.DTOs\SampleCRM.DTOs.csproj" />
     <ProjectReference Include="..\SampleCRM.Entities\SampleCRM.Entities.csproj" />
     <ProjectReference Include="..\SampleCRM.Helpers\SampleCRM.Helpers.csproj" />
+    <ProjectReference Include="..\SampleCRM.Services\SampleCRM.Services.csproj" />
   </ItemGroup>
 
 </Project>

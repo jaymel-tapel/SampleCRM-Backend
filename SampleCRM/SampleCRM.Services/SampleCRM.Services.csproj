@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleCRM.Data\SampleCRM.Data.csproj" />
+    <ProjectReference Include="..\SampleCRM.Entities\SampleCRM.Entities.csproj" />
+    <ProjectReference Include="..\SampleCRM.Helpers\SampleCRM.Helpers.csproj" />
+  </ItemGroup>
+
+</Project>

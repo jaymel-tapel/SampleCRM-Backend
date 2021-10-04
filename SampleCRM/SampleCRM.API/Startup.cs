@@ -13,6 +13,7 @@ using SampleCRM.Data.EFCore;
 using SampleCRM.Data.Repository;
 using SampleCRM.Entities;
 using SampleCRM.Helpers;
+using SampleCRM.Services.Interfaces;
 using System.Text;
 
 namespace SampleCRM.API
