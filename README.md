@@ -29,13 +29,13 @@ Response
 [
   {
     "id":7,     
-    "lastName":"Avila",
-    "firstName":"Ron",
-    "custCode":"ronavila20210923",
-    "email":"asd@gmail.com",
+    "lastName":"Doe",
+    "firstName":"John",
+    "custCode":"johndoe20210923",
+    "email":"email@gmail.com",
     "birthday":"2021-09-23T08:00:00",
     "phone":"09218945276",
-    "address":"test",
+    "address":"83 Sample street, Manila",
     }
 ]
 ```
