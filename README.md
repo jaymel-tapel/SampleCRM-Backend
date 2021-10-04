@@ -14,7 +14,7 @@ This project is built with .NET Core 5
 ### Endpoints
 
 
-/customers/getall
+**/customers/getall**\
 Request:
 ```
 {
