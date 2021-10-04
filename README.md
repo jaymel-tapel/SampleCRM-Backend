@@ -50,6 +50,33 @@ Response
 ]
 ```
 
+**/api/customer/add**
+Request:
+```
+{
+  "lastName": "string",
+  "firstName": "string",
+  "email": "user@example.com",
+  "birthday": "string", // Use Date ISO String
+  "phone": "string",
+  "address": "string"
+}
+```
+
+Response
+```
+{
+  "id":7,
+  "custCode":"johndoe20210923",
+  "lastName":"Doe",
+  "firstName":"John",
+  "email":"johndoe@gmail.com",
+  "birthday":"2021-09-23T08:00:00",
+  "phone":"09218945276",
+  "address":"83 Sample street, Manila",
+  }
+```
+
 
 
 
