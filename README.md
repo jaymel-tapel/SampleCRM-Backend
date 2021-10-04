@@ -5,7 +5,7 @@ This project is built with .NET Core 5
 
 **SampleCRM.Data** - Data Access layer of CRM, contains Repository interfaces and Entity Framework Core Implementations.
 
-**SampleCRM.Models** - Class library for entities/models, contains User and Customer/CustomerBasicInfo classes.
+**SampleCRM.Entities** - Class library for entities/models, contains User and Customer/CustomerBasicInfo classes.
 
 **SampleCRM.Helpers** - Class library which contains the token model and AuthSettings configuration model used for accessing the appsettings.json
 
