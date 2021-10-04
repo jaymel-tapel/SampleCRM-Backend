@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SampleCRM.API.DTOs;
 using SampleCRM.API.Services;
-using SampleCRM.API.ViewModels;
 using SampleCRM.Entities;
 using SampleCRM.Helpers;
 using System.Threading.Tasks;
@@ -76,9 +76,11 @@ namespace SampleCRM.API.Controllers
                     FirstName = userRegister.FirstName,
                     Password = userRegister.Password
                 };
-
                 await _userService.Add(newUser);
-                return Ok(user);
+
+                // remove password from response body
+                newUser.Password = null;
+                return Ok(newUser);
             }
             else
             {

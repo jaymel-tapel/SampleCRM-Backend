@@ -24,7 +24,7 @@ namespace SampleCRM.Data.EFCore
             try
             {
                 _db.Users.Add(user);
-                _ = await this._db.SaveChangesAsync();
+                await this._db.SaveChangesAsync();
                 return user;
             }
             catch (Exception e)

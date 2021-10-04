@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SampleCRM.API.DTOs;
 using SampleCRM.API.Services;
-using SampleCRM.API.ViewModels;
 using SampleCRM.Entities;
 using System;
 using System.Collections.Generic;

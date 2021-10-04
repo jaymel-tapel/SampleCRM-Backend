@@ -33,7 +33,11 @@ namespace SampleCRM.Data.EFCore
         {
             public CrmDbContext CreateDbContext(string[] args)
             {
-                IConfigurationRoot configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile(@Directory.GetCurrentDirectory() + "/../SampleCRM.API/appsettings.development.json").Build();
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile(@Directory.GetCurrentDirectory() + "/../SampleCRM.API/appsettings.json")
+                    .AddJsonFile(@Directory.GetCurrentDirectory() + "/../SampleCRM.API/appsettings.development.json").Build();
+
                 var builder = new DbContextOptionsBuilder<CrmDbContext>();
                 var connectionString = configuration.GetConnectionString("SQLServer");
                 builder.UseSqlServer(connectionString);

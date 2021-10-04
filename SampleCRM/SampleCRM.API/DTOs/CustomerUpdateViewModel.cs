@@ -4,10 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SampleCRM.API.ViewModels
+namespace SampleCRM.API.DTOs
 {
-    public class CustomerAddViewModel
+    public class CustomerUpdateViewModel
     {
+        [Required]
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Last name is required.")]
         public string LastName { get; set; }
 
@@ -17,8 +20,6 @@ namespace SampleCRM.API.ViewModels
         [Required(ErrorMessage = "Email is required.")]
         [EmailAddress(ErrorMessage = "Invalid Email.")]
         public string Email { get; set; }
-
-        [Required(ErrorMessage = "Birthday is required.")]
         public string Birthday { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
