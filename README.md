@@ -1,13 +1,17 @@
 # SampleCRM-Backend
 This project is built with .NET Core 5
 
-**SampleCRM.API** - WebAPI Project contains Controllers, Services, DTOs and default required files such as Program.cs, Startup.cs, appsettings.json/appsettings.development.json
+**SampleCRM.API** - WebAPI Project contains Controllers, Services, DTOs and default required files such as Program.cs, Startup.cs, appsettings.json/appsettings.development.json.
 
-**SampleCRM.Data** - Data Access layer of CRM, contains Repository interfaces and Entity Framework Core Implementations.
+**SampleCRM.DTOs** - Contains the model classes for the requests(with attribute validators) and some response models like User with Token.  
+
+**SampleCRM.Data** - Data Access layer of CRM, contains Repository interfaces and Entity Framework Core Implementations and Migrations.
 
 **SampleCRM.Entities** - Class library for entities/models, contains User and Customer/CustomerBasicInfo classes.
 
-**SampleCRM.Helpers** - Class library which contains the token model and AuthSettings configuration model used for accessing the appsettings.json
+**SampleCRM.Helpers** - Class library which contains the token model and AuthSettings configuration model used for accessing the appsettings.json.
+
+**SampleCRM.Services** - Class library which contains the service interfaces and implementations used in SampleCRM.API.
 
 ### Endpoints
 
