@@ -36,7 +36,8 @@ namespace SampleCRM.Data.EFCore
                 IConfigurationRoot configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile(@Directory.GetCurrentDirectory() + "/../SampleCRM.API/appsettings.json")
-                    .AddJsonFile(@Directory.GetCurrentDirectory() + "/../SampleCRM.API/appsettings.development.json").Build();
+                    .AddJsonFile(@Directory.GetCurrentDirectory() + "/../SampleCRM.API/appsettings.development.json")
+                    .Build();
 
                 var builder = new DbContextOptionsBuilder<CrmDbContext>();
                 var connectionString = configuration.GetConnectionString("SQLServer");

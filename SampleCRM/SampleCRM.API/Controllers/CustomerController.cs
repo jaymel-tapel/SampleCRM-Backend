@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using SampleCRM.API.DTOs;
 using SampleCRM.API.Services;
 using SampleCRM.Entities;
@@ -16,16 +17,21 @@ namespace SampleCRM.API.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerService _customerService;
-        public CustomerController(ICustomerService customerService)
+        private readonly ILogger _logger;
+
+        public CustomerController(ICustomerService customerService, ILogger<CustomerController> logger)
         {
             _customerService = customerService;
+            _logger = logger;
         }
 
         // Get All Customer
         [HttpPost("api/customer/getall")]
         public async Task<IActionResult> GetAllCustomer([FromBody] CustomerGetAll customerGetAll)
         {
+            _logger.LogInformation("Fetching customer information");
             var Customers = await _customerService.GetAll(customerGetAll.FilterKeyword, customerGetAll.SortOrder, customerGetAll.SortColumn);
+            _logger.LogInformation("Fetching customer success");
             return Ok(Customers);
         }
 
@@ -33,7 +39,7 @@ namespace SampleCRM.API.Controllers
         [HttpPost("api/customer/add")]
         public async Task<IActionResult> AddCustomer([FromBody] CustomerAdd customerAdd)
         {
-
+            _logger.LogInformation("Customer add attempt");
             Customer customer = await _customerService.GetByEmail(customerAdd.Email);
             if (customer != null)
             {
@@ -67,10 +73,12 @@ namespace SampleCRM.API.Controllers
                 custCodeSb.Append(newCustomer.LastName.ToLower());
                 custCodeSb.Append(newCustomer.Birthday.ToString("yyyyMMdd"));
                 newCustomer.CustCode = custCodeSb.ToString();
+                _logger.LogInformation("Customer add success");
                 return Ok(await _customerService.Add(newCustomer));
             }
             else
             {
+                _logger.LogInformation("Customer add failed");
                 return BadRequest(ModelState);
             }
         }
@@ -79,7 +87,7 @@ namespace SampleCRM.API.Controllers
         [HttpPost("api/customer/update")]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerUpdate customerUpdate)
         {
-
+            _logger.LogInformation("Customer update attempt");
             Customer checkCustomer = await _customerService.GetById(customerUpdate.Id);
             if (checkCustomer == null)
             {
@@ -114,11 +122,12 @@ namespace SampleCRM.API.Controllers
                 custCodeSb.Append(updatedCustomer.LastName.ToLower());
                 custCodeSb.Append(updatedCustomer.Birthday.ToString("yyyyMMdd"));
                 updatedCustomer.CustCode = custCodeSb.ToString();
-
+                _logger.LogInformation("Customer update success");
                 return Ok(await _customerService.Update(updatedCustomer));
             }
             else
             {
+                _logger.LogInformation("Customer update failed");
                 return BadRequest(ModelState);
             }
         }
@@ -127,6 +136,7 @@ namespace SampleCRM.API.Controllers
         [HttpPost("api/customer/get/{id}")]
         public async Task<IActionResult> GetCustomer([FromRoute] int id)
         {
+            _logger.LogInformation("Fetching customer information with id:" + id);
             Customer customer = await _customerService.GetById(id);
             if (customer == null)
             {
@@ -135,10 +145,12 @@ namespace SampleCRM.API.Controllers
 
             if (ModelState.IsValid)
             {
+                _logger.LogInformation("Fetch customer information success");
                 return Ok(customer);
             }
             else
             {
+                _logger.LogInformation("Fetch customer information failed");
                 return BadRequest(ModelState);
             }
         }
@@ -147,12 +159,15 @@ namespace SampleCRM.API.Controllers
         [HttpPost("api/customer/delete/{id}")]
         public async Task<IActionResult> DeleteCustomer([FromRoute] int id)
         {
+            _logger.LogInformation("Deleting customer with id:" + id);
             if (ModelState.IsValid)
             {
+                _logger.LogInformation("Delete customer success");
                 return Ok(await _customerService.Delete(id));
             }
             else
             {
+                _logger.LogInformation("Delete customer failed");
                 return BadRequest(ModelState);
             }
         }

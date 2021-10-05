@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SampleCRM.API.Controllers;
 using SampleCRM.API.Services;
 using SampleCRM.Data.EFCore;
 using SampleCRM.Data.Repository;
@@ -33,6 +35,7 @@ namespace SampleCRM.API
         {
             services.AddCors();
             services.AddControllers();
+            services.AddLogging();
             services.AddDbContext<CrmDbContext>( options => {
                 options.UseSqlServer(Configuration.GetConnectionString("SQLServer"));
             });

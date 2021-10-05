@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using SampleCRM.Data.Repository;
 using SampleCRM.Entities;
 using SampleCRM.Helpers;
@@ -13,13 +14,15 @@ namespace SampleCRM.Data.EFCore
     public class UserRepository : IUserRepository
     {
         private readonly CrmDbContext _db;
+        private readonly ILogger _logger;
 
-        public UserRepository(CrmDbContext crmDbContext)
+        public UserRepository(CrmDbContext crmDbContext, ILogger<UserRepository> logger)
         {
             _db = crmDbContext;
+            _logger = logger;
         }
 
-        public async Task<User> Add(User user)
+    public async Task<User> Add(User user)
         {
             try
             {
